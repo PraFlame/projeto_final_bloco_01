@@ -2,6 +2,8 @@ package roupasDeMargarida;
 
 import java.util.Scanner;
 
+import roupasDeMargarida.model.Saia;
+
 
 
 public class Menu {
@@ -12,9 +14,12 @@ public class Menu {
 
 			byte opcao;
 
+			Saia s1 = new Saia(123, (byte)44, "Saia longa vermelha", 38.8f, 20, "Saia longa"); 
+			s1.visualizar();
+			
 			while (true) {
 
-				System.out.println("*****************************************************");
+				System.out.println("\n*****************************************************");
 				System.out.println("                                                     ");
 				System.out.println("                ROUPAS DE MARGARIDA                  ");
 				System.out.println("                                                     ");
