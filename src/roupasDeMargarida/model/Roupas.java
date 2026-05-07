@@ -27,7 +27,7 @@ public abstract class Roupas {
 		this.codigo = codigo;
 	}
 	
-	public int getNumeracao() {
+	public byte getNumeracao() {
 		return numeracao;
 	}
 
@@ -66,7 +66,14 @@ public abstract class Roupas {
 	}
 
 
-
+	public boolean disponibilidade() {
+		if(this.quantidade>0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 	public void visualizar() {
 
@@ -77,7 +84,12 @@ public abstract class Roupas {
 		System.out.println(this.nome);
 		System.out.println("TAM: " + this.numeracao);
 		System.out.printf("Preço: R$ %.2f \n", this.preco);
-		System.out.printf("Quantidade em estoque: " + this.quantidade);
+		if(disponibilidade()) {
+			System.out.printf("Quantidade em estoque: " + this.quantidade);
+		}
+		else {
+			System.out.printf("PRODUTO INDISPONÍVEL.");
+		}
 
 	}
 	
