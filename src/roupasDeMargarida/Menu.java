@@ -168,17 +168,21 @@ public class Menu {
 			
 			System.out.println("Digite o nome do produto: ");
 			nome = leia.nextLine();
+			
+			System.out.println("Digite a numeração (Tamanho) do produto: ");
+			numeracao = leia.nextByte();
+			
 			leia.skip("\r\n");
 			System.out.println("Digite o preço do produto: ");
-			
 			String entrada = leia.nextLine();
 			preco = entrada.isEmpty() ? preco : Float.parseFloat(entrada.replace(',', '.'));
 			
 			System.out.println("Digite a quantidade diponível no estoque: ");
 			quantidade = leia.nextInt();
+			leia.skip("\r\n");
 			
 			System.out.println("O produto tem variações: (S/N):");
-			String confirmacao = leia.next();
+			String confirmacao = leia.nextLine();
 			
 			if(confirmacao.equalsIgnoreCase("S")) {
 				System.out.println("Digite o tipo do produto:");
